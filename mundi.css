@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -27,14 +29,14 @@ html, body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
+    background-color: #eceeef;
 }
 
 .border-top{
     position: fixed;
     top: 0;
     width: 100%;
-    height: 4%;
+    height: 40px;
     background-color: #fff;
 }
 
@@ -42,7 +44,7 @@ html, body{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 4%;
+    height: 40px;
     background-color: #fff;
 }
 
@@ -50,7 +52,7 @@ html, body{
     position: fixed;
     left: 0;
     top: 0;
-    width: 3%;
+    width: 40px;
     height: 100%;
     background-color: #fff;
 }
@@ -59,7 +61,7 @@ html, body{
     position: fixed;
     right: 0;
     top: 0;
-    width: 3%;
+    width: 40px;
     height: 100%;
     background-color: #fff;
 }
@@ -70,12 +72,12 @@ html, body{
 }
 
 .first-home-container{
-    background-color: #FF334F;
+    background-color: #fd5f60;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
 
