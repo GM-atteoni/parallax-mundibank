@@ -79,6 +79,15 @@ html, body{
     right: 0;
     width: 100%;
     height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.first-home-container svg{
+    position: absolute;
+    right: -12%;
+
 }
 
 .second-step{
