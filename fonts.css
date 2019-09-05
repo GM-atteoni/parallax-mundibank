@@ -1,9 +1,14 @@
 @font-face {
   font-family: 'ProductSans';
-  src: url('nomedafont.eot');
-  src: url('nomedafont?#iefix') format('embedded-opentype'),
-    url('nomedafont.svg#Locaweb-Icons') format('svg'),
-    url('nomedafont.ttf') format('truetype');
+  src: url('Product Sans Regular.ttf');
+  src:  url('Product Sans Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+@font-face {
+  font-family: 'ProductSans Bold';
+  src: url('Product Sans Bold.ttf');
+  src:  url('Product Sans Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
 }
