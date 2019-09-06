@@ -87,6 +87,7 @@ html, body{
 .first-home-container svg{
     position: absolute;
     right: -15%;
+    opacity: 0;
 
 }
 

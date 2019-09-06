@@ -1,14 +1,14 @@
 
 window.onload = function() {
-  TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 0.5});
+  TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 0.7});
   TweenMax.from(".border-top", 0.5, {height: 0, delay: 0.5});
   TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 0.5});
   TweenMax.from(".border-left", 0.5, {width: 0, delay: 0.5});
   TweenMax.from(".border-right", 0.5, {width: 0, delay: 0.5});
-  TweenMax.from("#svgOla", 1, {opacity: 0, delay: 0.5, ease: Expo.easeIn});
+  TweenMax.to("#svgOla", 1, {autoAlpha: 1, delay: 0.7, ease: Expo.easeIn});
   
   //   Vai para o topo
-  TweenLite.to('.container-linguica', 0.8, {scrollTo: {y:0, autoKill:false}, ease: Power3.easeInOut})
+  // TweenLite.to('.container-linguica', 0.8, {scrollTo: {y:0, autoKill:false}, ease: Power3.easeInOut})
 
 
   window.wasScrolled = false;
@@ -19,8 +19,8 @@ window.onload = function() {
            TweenMax.to("#firstTransitionDiv", 1, {transform:"100%", ease: Sine.easeInOut});
             //Cria o parallax
             tl = new TimelineLite();
-            tl.to("#svgOla", 0.5, {right: 15, ease: Sine.easeOut}).
-               to("#svgOla", 0.5, {right: "-15%", ease: Sine.easeIn});
+            tl.to("#svgOla", 0.4, {right: "-11%", ease: Sine.easeIn}).
+               to("#svgOla", 0.6, {right: "-15%", ease: Sine.easeIn});
         }
         window.wasScrolled = true;
 
@@ -32,8 +32,8 @@ window.onload = function() {
                 TweenMax.to("#firstTransitionDiv", 1, {xPercent:-50, ease: Sine.easeInOut});
                 //cria parallax
                 tl = new TimelineLite();
-                    tl.to("#svgOla", 0.5, {right: 15, ease: Sine.easeOut}).
-                       to("#svgOla", 0.5, {right: "-15%", ease: Sine.easeIn});
+                    tl.to("#svgOla", 0.3, {right: "-18%", ease: Sine.easeIn}).
+                    to("#svgOla", 0.7, {right: "-15%", ease: Sine.easeOut});
                 window.wasScrolled = false;
             }
     })
