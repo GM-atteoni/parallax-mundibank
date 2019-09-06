@@ -6,5 +6,37 @@ window.onload = function() {
   TweenMax.from(".border-left", 0.5, {width: 0, delay: 0.5});
   TweenMax.from(".border-right", 0.5, {width: 0, delay: 0.5});
   TweenMax.from("#svgOla", 1, {opacity: 0, delay: 0.5, ease: Expo.easeIn});
+  
+  //   Vai para o topo
+  TweenLite.to('.container-linguica', 0.8, {scrollTo: {y:0, autoKill:false}, ease: Power3.easeInOut})
+
+
+  window.wasScrolled = false;
+    $('.container-linguica').bind('scroll',function(){
+        //Se é o primeiro scroll
+        if (!window.wasScrolled){
+           //Manda o vermelho para a direita
+           TweenMax.to("#firstTransitionDiv", 1, {transform:"100%", ease: Sine.easeInOut});
+            //Cria o parallax
+            tl = new TimelineLite();
+            tl.to("#svgOla", 0.5, {right: 15, ease: Sine.easeOut}).
+               to("#svgOla", 0.5, {right: "-15%", ease: Sine.easeIn});
+        }
+        window.wasScrolled = true;
+
+        //pos é a posição da barra de scroll
+        var pos = $('.container-linguica').scrollTop();
+        //Quando atinge o topo
+            if (pos == 0) {
+                //Volta o vermelho para esquerda
+                TweenMax.to("#firstTransitionDiv", 1, {xPercent:-50, ease: Sine.easeInOut});
+                //cria parallax
+                tl = new TimelineLite();
+                    tl.to("#svgOla", 0.5, {right: 15, ease: Sine.easeOut}).
+                       to("#svgOla", 0.5, {right: "-15%", ease: Sine.easeIn});
+                window.wasScrolled = false;
+            }
+    })
 
 };
+
