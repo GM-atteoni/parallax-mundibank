@@ -16,11 +16,11 @@ window.onload = function() {
         //Se é o primeiro scroll
         if (!window.wasScrolled){
            //Manda o vermelho para a direita
-           TweenMax.to("#firstTransitionDiv", 1, {transform:"100%", ease: Sine.easeInOut});
+           TweenMax.to("#firstTransitionDiv", 1, {transform:"0%", ease: Sine.easeInOut});
             //Cria o parallax
             tl = new TimelineLite();
-            tl.to("#svgOla", 0.4, {right: "-11%", ease: Sine.easeIn}).
-               to("#svgOla", 0.6, {right: "-15%", ease: Sine.easeIn}).
+            tl.to("#svgOla", 0.4, {right: "-7%", ease: Sine.easeIn}).
+               to("#svgOla", 0.6, {right: "-10%", ease: Sine.easeIn}).
                to("#text-home", 0.5, {y: -20, autoAlpha:1, ease: Sine.easeInOut});
         }
         window.wasScrolled = true;
@@ -35,8 +35,8 @@ window.onload = function() {
                 tl = new TimelineLite();
                     tl.
                     to("#text-home", 0.4, {y: 20, autoAlpha:0, ease: Sine.easeInOut}).
-                    to("#svgOla", 0.3, {right: "-18%", ease: Sine.easeIn}).
-                    to("#svgOla", 0.7, {right: "-15%", ease: Sine.easeOut});
+                    to("#svgOla", 0.3, {right: "-13%", ease: Sine.easeIn}).
+                    to("#svgOla", 0.7, {right: "-10%", ease: Sine.easeOut});
                 window.wasScrolled = false;
             }
     })
