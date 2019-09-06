@@ -84,13 +84,23 @@ html, body{
     justify-content: center;
     align-items: center;
 }
+
 .first-home-container svg{
     position: absolute;
     right: -15%;
     opacity: 0;
-
 }
 
+.first-home-container p{
+    position: relative;
+    margin-right: 30%;
+    opacity: 0;
+    font-family: 'Roboto';
+    font-weight: 100;
+    color: white;
+    font-size: 59px;
+    width: 663px;
+}
 
 .second-step{
     min-height: 100%;

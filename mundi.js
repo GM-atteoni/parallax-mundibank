@@ -20,7 +20,8 @@ window.onload = function() {
             //Cria o parallax
             tl = new TimelineLite();
             tl.to("#svgOla", 0.4, {right: "-11%", ease: Sine.easeIn}).
-               to("#svgOla", 0.6, {right: "-15%", ease: Sine.easeIn});
+               to("#svgOla", 0.6, {right: "-15%", ease: Sine.easeIn}).
+               to("#text-home", 0.5, {y: -20, autoAlpha:1, ease: Sine.easeInOut});
         }
         window.wasScrolled = true;
 
@@ -29,10 +30,12 @@ window.onload = function() {
         //Quando atinge o topo
             if (pos == 0) {
                 //Volta o vermelho para esquerda
-                TweenMax.to("#firstTransitionDiv", 1, {xPercent:-50, ease: Sine.easeInOut});
+                TweenMax.to("#firstTransitionDiv", 1, {xPercent:-50, ease: Sine.easeInOut, delay: 0.4});
                 //cria parallax
                 tl = new TimelineLite();
-                    tl.to("#svgOla", 0.3, {right: "-18%", ease: Sine.easeIn}).
+                    tl.
+                    to("#text-home", 0.4, {y: 20, autoAlpha:0, ease: Sine.easeInOut}).
+                    to("#svgOla", 0.3, {right: "-18%", ease: Sine.easeIn}).
                     to("#svgOla", 0.7, {right: "-15%", ease: Sine.easeOut});
                 window.wasScrolled = false;
             }
