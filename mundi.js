@@ -1,5 +1,5 @@
 
-window.ready = function() {
+window.onload = function() {
   TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 0.7});
   TweenMax.from(".border-top", 0.5, {height: 0, delay: 0.5});
   TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 0.5});
