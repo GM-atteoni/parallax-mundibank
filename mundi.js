@@ -1,15 +1,39 @@
-
+''
 window.onload = function() {
-  TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 0.7});
-  TweenMax.from(".border-top", 0.5, {height: 0, delay: 0.5});
-  TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 0.5});
-  TweenMax.from(".border-left", 0.5, {width: 0, delay: 0.5});
-  TweenMax.from(".border-right", 0.5, {width: 0, delay: 0.5});
-  TweenMax.to("#svgOla", 1, {autoAlpha: 1, delay: 0.7, ease: Expo.easeIn});
+  TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 5.7});
+  TweenMax.from(".border-top", 0.5, {height: 0, delay: 5.5});
+  TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 5.5});
+  TweenMax.from(".border-left", 0.5, {width: 0, delay: 5.5});
+  TweenMax.from(".border-right", 0.5, {width: 0, delay: 5.5});
+  TweenMax.to("#svgOla", 1, {autoAlpha: 1, delay: 5.7, ease: Expo.easeIn});
   
-  //   Vai para o topo
+  //   Vai para o topo, implementar depois
   // TweenLite.to('.container-linguica', 0.8, {scrollTo: {y:0, autoKill:false}, ease: Power3.easeInOut})
 
+  //Loader 
+  dot = $('.dot');
+  loader = $('#loader');
+  timelineLoader = new TimelineMax({repeat: 3, onStart: tiraOverflowLinguica, onComplete: colocaOverflowLinguica});
+
+
+  function tiraOverflowLinguica(){
+    $('.container-linguica').css("overflow-y", "hidden");
+  }
+
+  function colocaOverflowLinguica(){
+    $('.container-linguica').css("overflow-y", "auto");
+  }
+
+  timelineLoader.staggerFromTo(dot, 
+                               0.3, 
+                               {y: 0, autoAlpha: 0}, 
+                               {y: 20, autoAlpha: 1, ease: Back.EaseInOut}, 
+                               0.2)
+                .fromTo(loader, 
+                        0.3,
+                        {autoAlpha: 1, scale: 1.3},
+                        {autoAlpha: 0, scale: 1, ease: Power0.easeNone},
+                        0.9);
 
   window.wasScrolled = false;
     $('.container-linguica').bind('scroll',function(){

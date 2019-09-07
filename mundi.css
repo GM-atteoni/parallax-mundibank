@@ -86,10 +86,33 @@ html, body{
     align-items: center;
 }
 
+#loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+#loader .dot{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: 6px;
+    border: 1px white solid;
+}
+
 .first-home-container svg{
     position: absolute;
     right: -15%;
     opacity: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .first-home-container p{
@@ -101,6 +124,12 @@ html, body{
     color: white;
     font-size: 59px;
     width: 663px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .second-step{
