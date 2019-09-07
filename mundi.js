@@ -1,10 +1,11 @@
 ''
 window.onload = function() {
+  tiraOverflowLinguica();  
   TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 5.7});
-  TweenMax.from(".border-top", 0.5, {height: 0, delay: 5.5});
-  TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 5.5});
-  TweenMax.from(".border-left", 0.5, {width: 0, delay: 5.5});
-  TweenMax.from(".border-right", 0.5, {width: 0, delay: 5.5});
+  TweenMax.from(".border-top", 0.5, {height: 0, delay: 4.8});
+  TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 4.8});
+  TweenMax.from(".border-left", 0.5, {width: 0, delay: 4.8});
+  TweenMax.from(".border-right", 0.5, {width: 0, delay: 4.8});
   TweenMax.to("#svgOla", 1, {autoAlpha: 1, delay: 5.7, ease: Expo.easeIn});
   
   //   Vai para o topo, implementar depois
@@ -13,7 +14,7 @@ window.onload = function() {
   //Loader 
   dot = $('.dot');
   loader = $('#loader');
-  timelineLoader = new TimelineMax({repeat: 3, onStart: tiraOverflowLinguica, onComplete: colocaOverflowLinguica});
+  timelineLoader = new TimelineMax({repeat: 3, onComplete: colocaOverflowLinguica});
 
 
   function tiraOverflowLinguica(){

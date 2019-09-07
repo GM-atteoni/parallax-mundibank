@@ -101,6 +101,28 @@ html, body{
     border-radius: 100%;
     margin-right: 6px;
     border: 1px white solid;
+    opacity: 0;
+}
+
+.textLeftSection{
+    position: relative;
+    top: 268px;
+    left: 78px;
+    width: 670px;
+    height: 388px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textLeftSection p{
+    font-family: Roboto;
+    color: white;
+    font-weight: 100;
+    font-size: 50px;
+    text-align: left;
 }
 
 .first-home-container svg{
