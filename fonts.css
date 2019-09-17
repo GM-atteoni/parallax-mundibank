@@ -12,3 +12,17 @@
   font-weight: bold;
   font-style: bold;
 }
+@font-face {
+  font-family: 'Chalet';
+  src: url('Chalet-LondonNineteenSixty.ttf');
+  src:  url('Chalet-LondonNineteenSixty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Chalet Medium';
+  src: url('Chalet-LondonNineteenSeventy_medium.ttf');
+  src:  url('Chalet-LondonNineteenSeventy_medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

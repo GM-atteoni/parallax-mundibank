@@ -134,14 +134,15 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 65px;
 }
 
 .textLeftSection p{
     font-family: 'Roboto';
     color: white;
     font-weight: 100;
-    font-size: 50px;
-    text-align: center;
+    font-size: 40px;
+    text-align: left;
 }
 
 #svgOla{
@@ -158,13 +159,13 @@ html, body{
 
 .first-home-container p{
     position: relative;
-    margin-right: 30%;
+    margin-right: 35%;
     opacity: 0;
     font-family: 'Roboto';
     font-weight: 100;
     color: white;
-    font-size: 59px;
-    width: 663px;
+    font-size: 50px;
+    width: 563px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -413,12 +414,13 @@ html, body{
     min-height: 100%;
     width: 100%;
     background-color: white;
+    position: relative;
 }
 
 .fifith-container{
     background-image: url('festa.png');
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     top: 0;
     bottom: 0;
@@ -430,16 +432,22 @@ html, body{
 }
 
 #praVoce{
-    width: auto;
-    height: 250px;
+    width: 100%;
+    height: auto;
     font-family: cursive;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 45px;
 }
-
+#praVoce text{
+    font-family: Chalet Medium;
+    font-size: 363px;
+    font-weight: 200;
+}
 #text-fifith{
     font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 73px;
+    font-weight: 600;
+    font-size: 55px;
     width: 1006px;
     text-align: center;
     position: relative;
@@ -496,3 +504,18 @@ html, body{
     opacity: 0;
 }
 
+.pinkButton{
+    background-color: #FF334F;
+    border-radius: 28px;
+    border: 1px solid #FF334F;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 17px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-align: center;
+    width: 160px;
+    align-self: center;
+}
