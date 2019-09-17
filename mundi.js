@@ -3,11 +3,15 @@ window.onload = function() {
   tiraOverflowLinguica();  
   TweenMax.to("#firstTransitionDiv", 0.5, {xPercent:-50, delay: 5.7});
   TweenMax.from(".border-top", 0.5, {height: 0, delay: 4.8});
+  TweenMax.from("#little-mundi", 0.5, {autoAlpha: 0, delay: 5.2});
   TweenMax.from(".border-bottom", 0.5, {height: 0, delay: 4.8});
   TweenMax.from(".border-left", 0.5, {width: 0, delay: 4.8});
   TweenMax.from(".border-right", 0.5, {width: 0, delay: 4.8});
   TweenMax.to("#svgOla", 1, {autoAlpha: 1, delay: 5.7, ease: Expo.easeIn});
-  
+  TweenMax.to("#face-icon", 0.4, {autoAlpha: 1, height: 25, delay: 6.2, ease: Expo.easeIn});
+  TweenMax.to("#in-icon", 0.4, {autoAlpha: 1, height: 25, delay: 7, ease: Expo.easeIn});
+  TweenMax.to("#insta-icon", 0.4, {autoAlpha: 1, height: 25, delay: 6.6, ease: Expo.easeIn});
+  TweenMax.to(".home-scroll", 1, {autoAlpha: 1, bottom: 90, delay: 6.0, ease: Expo.easeIn});
   //   Vai para o topo, implementar depois
   // TweenLite.to('.container-linguica', 0.8, {scrollTo: {y:0, autoKill:false}, ease: Power3.easeInOut})
 
@@ -22,7 +26,7 @@ window.onload = function() {
   }
 
   function colocaOverflowLinguica(){
-    $('.container-linguica').css("overflow-y", "auto");
+    $('.container-linguica').css("overflow-y", "unset");
   }
 
   timelineLoader.staggerFromTo(dot, 
@@ -37,21 +41,23 @@ window.onload = function() {
                         0.9);
 
   window.wasScrolled = false;
-    $('.container-linguica').bind('scroll',function(){
+    $(window).bind('scroll',function(){
         //Se é o primeiro scroll
         if (!window.wasScrolled){
            //Manda o vermelho para a direita
            TweenMax.to("#firstTransitionDiv", 1, {transform:"0%", ease: Sine.easeInOut});
             //Cria o parallax
             tl = new TimelineLite();
-            tl.to("#svgOla", 0.4, {right: "-7%", ease: Sine.easeIn}).
+            tl.
+               
+               to("#svgOla", 0.4, {right: "-7%", ease: Sine.easeIn}).
                to("#svgOla", 0.6, {right: "-10%", ease: Sine.easeIn}).
                to("#text-home", 0.5, {y: -20, autoAlpha:1, ease: Sine.easeInOut});
         }
         window.wasScrolled = true;
 
         //pos é a posição da barra de scroll
-        var pos = $('.container-linguica').scrollTop();
+        var pos = $(window).scrollTop();
         //Quando atinge o topo
             if (pos == 0) {
                 //Volta o vermelho para esquerda
@@ -61,7 +67,7 @@ window.onload = function() {
                     tl.
                     to("#text-home", 0.4, {y: 20, autoAlpha:0, ease: Sine.easeInOut}).
                     to("#svgOla", 0.3, {right: "-13%", ease: Sine.easeIn}).
-                    to("#svgOla", 0.7, {right: "-10%", ease: Sine.easeOut});
+                    to("#svgOla", 0.7, {right: "-10%", ease: Sine.easeOut})
                 window.wasScrolled = false;
             }
     })

@@ -20,16 +20,24 @@ html, body{
     align-items: center;
 }
 
+.flex-cont {
+    /* This is the magic bit for Firefox */
+    scrollbar-width: none;
+  }
+  
+  .flex-cont::-webkit-scrollbar {
+    /* This is the magic bit for WebKit */
+    display: none;
+  }
+
 .container-linguica{
     position: relative;
     width: 100%;
     height: 100%;
-    overflow-y: auto; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #eceeef;
 }
 
 .border-top{
@@ -38,6 +46,16 @@ html, body{
     width: 100%;
     height: 40px;
     background-color: #fff;
+}
+
+.border-top p{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    opacity: 1;
+    left: 86px;
 }
 
 .border-bottom{
@@ -52,7 +70,7 @@ html, body{
     position: fixed;
     left: 0;
     top: 0;
-    width: 40px;
+    width: 40px; 
     height: 100%;
     background-color: #fff;
 }
@@ -80,7 +98,7 @@ html, body{
     right: 0;
     width: 100%;
     height: 100%;
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,10 +124,11 @@ html, body{
 
 .textLeftSection{
     position: relative;
-    top: 268px;
-    left: 78px;
-    width: 670px;
-    height: 388px;
+    width: 500px;
+    height: 320px;
+    top: 170px;
+    left: 90px;
+    bottom: 342px;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -118,14 +137,14 @@ html, body{
 }
 
 .textLeftSection p{
-    font-family: Roboto;
+    font-family: 'Roboto';
     color: white;
     font-weight: 100;
     font-size: 50px;
-    text-align: left;
+    text-align: center;
 }
 
-.first-home-container svg{
+#svgOla{
     position: absolute;
     right: -15%;
     opacity: 0;
@@ -154,6 +173,14 @@ html, body{
     user-select: none;
 }
 
+.home-scroll{
+    bottom: 0;
+    transform: scale(-1, 1) rotate(270deg);
+    position: absolute;
+    right: 0;
+    opacity: 0;
+}
+
 .second-step{
     min-height: 100%;
     width: 100%;
@@ -179,13 +206,124 @@ html, body{
 }
 
 .third-container{
-    background-color: violet;
+    background-color: white;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
+}
+
+.third-middle-top{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.third-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 17em;
+    margin-left: 5em;
+    width: 16em;
+    margin-top: 10em;
+}
+
+.third-text h2{
+    font-size: 45px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.third-text h4{
+    font-size: 21px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.third-text a{
+    background-color:#FF334F;
+	border-radius:28px;
+	border:1px solid #FF334F;
+	display:inline-block;
+	cursor:pointer;
+	color:#FFFFFF;
+	font-family: 'Roboto';
+	font-size:17px;
+	padding:16px 31px;
+    text-decoration:none;
+    text-align: center;
+    width: 160px;
+    align-self: center;
+}
+
+.third-text a:hover{
+    background-color:#ff3360;
+}
+
+.columns{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.column1{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.column2{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.column3{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.column4{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.column5{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.column6{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.column7{
+    width: 75px;
+    height: 300px;
+    background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.app-phones{
+    position: absolute;
+    height: 700px;
 }
 
 .fourth-step{
@@ -199,6 +337,57 @@ html, body{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
+
+.not-fixed{
+    margin-top: 150vh;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#big-mundi{
+    position: fixed;
+    bottom: 30px;
+    height: 200px;
+    left: -300px;
+    opacity: 0;
+}
+
+#little-mundi{
+    bottom: 30px;
+    height: 20px;
+    width: 320px;
+    margin-top: 0.2em;
+}
+
+#face-icon{
+    position: absolute;
+    right: -5px;
+    height: 33px;
+    top: 15em;
+    opacity: 0;
+}
+
+#insta-icon{
+    position: absolute;
+    right: 6px;
+    height: 33px;
+    top: 20em;
+    opacity: 0;
+}
+
+#in-icon{
+    position: absolute;
+    right: 5px;
+    height: 33px;
+    top: 25em; 
+    opacity: 0;
+}
+
