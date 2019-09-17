@@ -15,7 +15,7 @@ window.onload = function() {
   // TweenLite.to('.container-linguica', 0.8, {scrollTo: {y:0, autoKill:false}, ease: Power3.easeInOut})
 
   //Loader 
-  dot = $('.dot');
+  dot = $('.dot'); 
   loader = $('#loader');
   timelineLoader = new TimelineMax({repeat: 3, onComplete: colocaOverflowLinguica});
 
