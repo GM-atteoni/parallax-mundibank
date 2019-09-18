@@ -138,6 +138,7 @@ html, body{
 }
 
 .textLeftSection p{
+    position: relative;
     font-family: 'Roboto';
     color: white;
     font-weight: 100;
@@ -242,19 +243,22 @@ html, body{
     margin-top: 10em;
 }
 
-.third-text h2{
+.third-text-1{
+    position: relative;
     font-size: 45px;
     font-family: 'Roboto';
     font-weight: 400;
 }
 
-.third-text h4{
+.third-text-2{
+    position: relative;
     font-size: 21px;
     font-family: 'Roboto';
     font-weight: 400;
 }
 
-.third-text a{
+.third-text-3{
+    position: relative;
     background-color:#FF334F;
 	border-radius:28px;
 	border:1px solid #FF334F;
@@ -268,10 +272,13 @@ html, body{
     text-align: center;
     width: 160px;
     align-self: center;
+    transition: 0.2s ease-in-out all;
 }
 
 .third-text a:hover{
-    background-color:#ff3360;
+    background-color: #fff;
+    border: 1px solid #ff3360;
+    color: #ff3360;
 }
 
 .columns{
@@ -284,6 +291,7 @@ html, body{
 
 .column1{
     width: 75px;
+    transform: rotate(360deg);
     height: 90px;
     margin-top: 180px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -292,6 +300,7 @@ html, body{
 
 .column2{
     width: 75px;
+    transform: rotate(360deg);
     height: 130px;
     margin-top: 160px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -300,6 +309,7 @@ html, body{
 
 .column3{
     width: 75px;
+    transform: rotate(360deg);
     height: 230px;
     margin-top: 65px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -308,6 +318,7 @@ html, body{
 
 .column4{
     width: 75px;
+    transform: rotate(360deg);
     height: 300px;
     margin-top: 15px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -316,6 +327,7 @@ html, body{
 
 .column5{
     width: 75px;
+    transform: rotate(360deg);
     height: 240px;
     margin-top: 80px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -324,6 +336,7 @@ html, body{
 
 .column6{
     width: 75px;
+    transform: rotate(360deg);
     height: 275px;
     margin-top: 55px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -332,6 +345,7 @@ html, body{
 
 .column7{
     width: 75px;
+    transform: rotate(360deg);
     height: 85px;
     margin-top: 265px;
     background: transparent linear-gradient(180deg, #B26591 0%, #FB3552 100%) 0% 0% no-repeat padding-box;
@@ -362,9 +376,11 @@ html, body{
 }
 
 .fourth-text{
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    top: 90px;
     height: 17em;
     margin-left: 15em;
     width: 16em;
@@ -397,10 +413,13 @@ html, body{
     text-align: center;
     width: 160px;
     align-self: center;
+    transition: 0.2s ease-in-out all;
 }
 
 .fourth-text a:hover{
-    background-color:#ff3360;
+    background-color: #fff;
+    border: 1px solid #ff3360;
+    color: #ff3360;
 }
 
 .fourth-container-text{

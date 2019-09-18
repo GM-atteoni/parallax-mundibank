@@ -29,14 +29,14 @@ window.onload = function() {
   }
 
     // Balanço cartões
-    $(".app-phones").on('mousemove', function(e){
+    $(".third-container").on('mousemove', function(e){
         centerX = $(this).width();
         centerY = $(this).height();
         
         moveX = (centerX - e.offsetX)/90;
         moveY = (centerY - e.offsetY)/90;
         
-        $(".app-phones").css("transform", 'rotateY('+ moveX + 'deg) rotateX('+ moveY + 'deg)')
+        $(".app-phones").css("transform", 'rotateY('+ (moveX/2) + 'deg) rotateX('+ (moveY/2) + 'deg)')
     })
 
   timelineLoader.staggerFromTo(dot, 
@@ -55,7 +55,7 @@ window.onload = function() {
     setTimeout(() => {
         $(window).bind('scroll',function(){
             //Se é o primeiro scroll
-            if (!window.wasScrolled){
+            if (!window.wasScrolled){ 
                //Manda o vermelho para a direita
                TweenMax.to("#firstTransitionDiv", 0.6, {transform:"0%", ease: Sine.easeInOut});
                 //Cria o parallax
@@ -95,8 +95,8 @@ window.onload = function() {
     //animação de fechar o home
     let tlHome = new TimelineLite();
     tlHome.add('hide') 
-    .to("#svgOla", 0.5, {autoAlpha:0.7, top: 0, ease: Sine.easeInOut}, 'hide')
-    .to("#text-home", 0.5, {autoAlpha:0.7, bottom: '30%', ease: Sine.easeInOut}, 'hide')
+    .to("#svgOla", 0.5, {top: 0, ease: Sine.easeInOut}, 'hide')
+    .to("#text-home", 0.5, {bottom: '30%', ease: Sine.easeInOut}, 'hide')
 
     //Cena fechar home
     const sceneHome = new ScrollMagic.Scene({
@@ -110,7 +110,7 @@ window.onload = function() {
     //animação big-mundi 1
     let tlBig1 = new TimelineLite();
     tlBig1.add('left') 
-    .to('#big-mundi', 1.5, {left: -290})
+    .to('#big-mundi', 1.5, {left: -290, onStart: playSecond})
 
     //Cena big-mundi 1
     const sceneBigMundi1 = new ScrollMagic.Scene({
@@ -124,7 +124,8 @@ window.onload = function() {
     let tBigMundi2 = new TimelineLite();
     tBigMundi2
     .to('#big-mundi', 3, {left: -1247})
-    .to('#big-mundi', 3, {top: 1252});
+    .to('#big-mundi', 3, {top: 1252, onStart: playThirdText});
+
     //Cena big-mundi 2
     const sceneBigMundi2 = new ScrollMagic.Scene({
         triggerElement: '.third-step',
@@ -136,6 +137,47 @@ window.onload = function() {
 
     //Animação colunas
     let tlColumns = new TimelineLite();
+    tlColumns.add('grow') 
+    .from('.column1', 1, {scaleY: 3}, 'grow')
+    .from('.column2', 1, {scaleY: 3}, 'grow')
+    .from('.column3', 1, {scaleY: 1.6}, 'grow')
+    .from('.column4', 1, {scaleY: 1.1}, 'grow')
+    .from('.column5', 1, {scaleY: 1.7}, 'grow')
+    .from('.column6', 1, {scaleY: 1.5}, 'grow')
+    .from('.column7', 1, {scaleY: 3}, 'grow')
+
+    //Cena columns
+    const sceneColumns = new ScrollMagic.Scene({
+        triggerElement: '.third-step',
+        duration: 700,
+    })
+    .setTween(tlColumns) 
+    .addTo(controller);
+
+    //animação text do terceiro
+    const tTextThird = new TimelineLite();
+    tTextThird
+    .from('.third-text-1', 0.8, {autoAlpha: 0, left: 50}, '+=0.2')
+    .from('.third-text-2', 0.8, {autoAlpha: 0, right: 50}, '-=0.5')
+    .from('.third-text-3', 0.4, {autoAlpha: 0}, '-=0.7');
+
+    tTextThird.pause();
+
+    function playThirdText() {
+        tTextThird.play();
+    }
+
+    //animação segunda página
+    const tlSecond = new TimelineLite(); 
+    tlSecond
+    .from('.textLeftSection', 0.6, {left: 40, autoAlpha: 0})
+    .from('.textLeftSection p', 0.8, {left: -90, autoAlpha: 0});
+
+    tlSecond.pause();
+
+    function playSecond() {
+        tlSecond.play();
+    }
 
 };
 
