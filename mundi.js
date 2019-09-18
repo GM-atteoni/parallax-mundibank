@@ -165,6 +165,7 @@ window.onload = function() {
 
     function playThirdText() {
         tTextThird.play();
+        playPhones();
     }
 
     //animação segunda página
@@ -177,6 +178,17 @@ window.onload = function() {
 
     function playSecond() {
         tlSecond.play();
+    }
+
+    //animação phones
+    const tlPhones = new TimelineLite();
+    tlPhones
+    .from('.app-phones', 0.6, {left: 40, autoAlpha: 0})
+
+    tlPhones.pause();
+
+    function playPhones() {
+        tlPhones.play();
     }
 
 };
