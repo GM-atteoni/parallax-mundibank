@@ -85,5 +85,25 @@ window.onload = function() {
         })
     }, 4000);
 
+    //Animação Scroll
+    const controller = new ScrollMagic.Controller();
+
+    //animação de fechar o home
+    let tlHome = new TimelineLite();
+    tlHome.add('hide')
+    .to("#svgOla", 1.5, {autoAlpha:0.7, top: 0, ease: Sine.easeInOut}, 'hide')
+    .to("#text-home", 1.5, {autoAlpha:0.7, bottom: '30%', ease: Sine.easeInOut}, 'hide')
+
+    //Animação colunas
+    let tlColumns = new TimelineLite();
+
+    const sceneHome = new ScrollMagic.Scene({
+        triggerElement: '.second-step',
+        duration: 700,
+        triggerHook: 0.9
+    })
+    .setTween(tlHome)
+    .addTo(controller);
+
 };
 
