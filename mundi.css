@@ -191,6 +191,7 @@ html, body{
 .second-step{
     min-height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 .second-container{
@@ -205,6 +206,7 @@ html, body{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .third-step{
@@ -220,6 +222,7 @@ html, body{
     right: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .third-middle-top{
@@ -355,6 +358,7 @@ html, body{
     right: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .fourth-text{
@@ -432,12 +436,12 @@ html, body{
 }
 
 #praVoce{
-    width: 100%;
+    width: 80%;
     height: auto;
     font-family: cursive;
     position: absolute;
-    bottom: 0;
-    left: 45px;
+    bottom: -25px;
+    left: 75px;
 }
 #praVoce text{
     font-family: Chalet Medium;
@@ -466,11 +470,10 @@ html, body{
 }
 
 #big-mundi{
-    position: fixed;
-    bottom: 30px;
+    position: absolute;
     height: 200px;
-    left: -300px;
-    opacity: 0;
+    left: 1153px;
+    top: 552px;
 }
 
 #little-mundi{
@@ -518,4 +521,10 @@ html, body{
     text-align: center;
     width: 160px;
     align-self: center;
+}
+
+.internacional-svg{
+    width: auto;
+    height: 100px;
+    position: absolute;
 }

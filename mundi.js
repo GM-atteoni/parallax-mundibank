@@ -57,14 +57,13 @@ window.onload = function() {
             //Se é o primeiro scroll
             if (!window.wasScrolled){
                //Manda o vermelho para a direita
-               TweenMax.to("#firstTransitionDiv", 1, {transform:"0%", ease: Sine.easeInOut});
+               TweenMax.to("#firstTransitionDiv", 0.6, {transform:"0%", ease: Sine.easeInOut});
                 //Cria o parallax
                 tl = new TimelineLite();
                 tl.
                    to(".home-scroll", 0.2, {autoAlpha: 0, top: '43em', ease: Expo.easeIn}).
-                   to("#svgOla", 0.4, {right: "-7%", ease: Sine.easeIn}).
-                   to("#svgOla", 0.6, {right: "-10%", ease: Sine.easeIn}).
-                   to("#text-home", 0.5, {y: -20, autoAlpha:1, ease: Sine.easeInOut});
+                   to("#svgOla", 0.4, {right: "-10%", ease: Sine.easeIn}).
+                   to("#text-home", 0.3, {y: -20, autoAlpha:1, ease: Sine.easeInOut});
                 window.wasScrolled = true;
             }
     
@@ -82,6 +81,11 @@ window.onload = function() {
             //             to("#svgOla", 0.3, {right: "-13%", ease: Sine.easeIn}).
             //             to("#svgOla", 0.7, {right: "-10%", ease: Sine.easeOut})
             //     }
+
+            //Quando atinge o fundo
+            if($('.flex-cont').scrollTop() == ($(window).height() - $('.flex-cont').height())){
+                console.log('ok');
+            }
         })
     }, 4000);
 
@@ -90,13 +94,11 @@ window.onload = function() {
 
     //animação de fechar o home
     let tlHome = new TimelineLite();
-    tlHome.add('hide')
-    .to("#svgOla", 1.5, {autoAlpha:0.7, top: 0, ease: Sine.easeInOut}, 'hide')
-    .to("#text-home", 1.5, {autoAlpha:0.7, bottom: '30%', ease: Sine.easeInOut}, 'hide')
+    tlHome.add('hide') 
+    .to("#svgOla", 0.5, {autoAlpha:0.7, top: 0, ease: Sine.easeInOut}, 'hide')
+    .to("#text-home", 0.5, {autoAlpha:0.7, bottom: '30%', ease: Sine.easeInOut}, 'hide')
 
-    //Animação colunas
-    let tlColumns = new TimelineLite();
-
+    //Cena fechar home
     const sceneHome = new ScrollMagic.Scene({
         triggerElement: '.second-step',
         duration: 700,
@@ -104,6 +106,36 @@ window.onload = function() {
     })
     .setTween(tlHome)
     .addTo(controller);
+
+    //animação big-mundi 1
+    let tlBig1 = new TimelineLite();
+    tlBig1.add('left') 
+    .to('#big-mundi', 1.5, {left: -290})
+
+    //Cena big-mundi 1
+    const sceneBigMundi1 = new ScrollMagic.Scene({
+        triggerElement: '.second-step',
+        duration: 450
+    })
+    .setTween(tlBig1)
+    .addTo(controller);
+
+    //animação big-mundi 2 -- do lugar certo até só sobrar bank
+    let tBigMundi2 = new TimelineLite();
+    tBigMundi2
+    .to('#big-mundi', 3, {left: -1247})
+    .to('#big-mundi', 3, {top: 1252});
+    //Cena big-mundi 2
+    const sceneBigMundi2 = new ScrollMagic.Scene({
+        triggerElement: '.third-step',
+        duration: 700,
+        triggerHook: 0.9
+    })
+    .setTween(tBigMundi2)
+    .addTo(controller);
+
+    //Animação colunas
+    let tlColumns = new TimelineLite();
 
 };
 
