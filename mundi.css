@@ -290,6 +290,7 @@ html, body{
 }
 
 .column1{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 90px;
@@ -299,6 +300,7 @@ html, body{
 }
 
 .column2{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 130px;
@@ -308,6 +310,7 @@ html, body{
 }
 
 .column3{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 230px;
@@ -317,6 +320,7 @@ html, body{
 }
 
 .column4{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 300px;
@@ -326,6 +330,7 @@ html, body{
 }
 
 .column5{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 240px;
@@ -335,6 +340,7 @@ html, body{
 }
 
 .column6{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 275px;
@@ -344,6 +350,7 @@ html, body{
 }
 
 .column7{
+    position: relative;
     width: 75px;
     transform: rotate(360deg);
     height: 85px;

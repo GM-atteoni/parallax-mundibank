@@ -109,7 +109,7 @@ window.onload = function() {
 
     //animação big-mundi 1
     let tlBig1 = new TimelineLite();
-    tlBig1.add('left') 
+    tlBig1
     .to('#big-mundi', 1.5, {left: -290, onStart: playSecond})
 
     //Cena big-mundi 1
@@ -124,7 +124,7 @@ window.onload = function() {
     let tBigMundi2 = new TimelineLite();
     tBigMundi2
     .to('#big-mundi', 3, {left: -1247})
-    .to('#big-mundi', 3, {top: 1252, onStart: playThirdText});
+    .to('#big-mundi', 3, {top: 1252, onStart: playThirdText, onComplete:stopBigMundi2 });
 
     //Cena big-mundi 2
     const sceneBigMundi2 = new ScrollMagic.Scene({
@@ -135,24 +135,33 @@ window.onload = function() {
     .setTween(tBigMundi2)
     .addTo(controller);
 
+    function stopBigMundi2() {
+        tBigMundi2.pause();
+        tlBig1.pause();
+    }
+
     //Animação colunas
     let tlColumns = new TimelineLite();
     tlColumns.add('grow') 
-    .from('.column1', 1, {scaleY: 3}, 'grow')
-    .from('.column2', 1, {scaleY: 3}, 'grow')
-    .from('.column3', 1, {scaleY: 1.6}, 'grow')
-    .from('.column4', 1, {scaleY: 1.1}, 'grow')
-    .from('.column5', 1, {scaleY: 1.7}, 'grow')
-    .from('.column6', 1, {scaleY: 1.5}, 'grow')
-    .from('.column7', 1, {scaleY: 3}, 'grow')
+    .from('.column1', 0.2, {top: -120}, 'grow')
+    .from('.column2', 0.2, {top: -190}, 'grow')
+    .from('.column3', 0.2, {top: -250}, 'grow')
+    .from('.column4', 0.2, {top: -330}, 'grow')
+    .from('.column5', 0.2, {top: -250}, 'grow')
+    .from('.column6', 0.2, {top: -190}, 'grow')
+    .from('.column7', 0.2, {top: -120, onComplete: stopColumns}, 'grow')
 
     //Cena columns
     const sceneColumns = new ScrollMagic.Scene({
         triggerElement: '.third-step',
-        duration: 700,
+        duration: 300,
     })
     .setTween(tlColumns) 
     .addTo(controller);
+
+    function stopColumns() {
+        tlColumns.pause();
+    }
 
     //animação text do terceiro
     const tTextThird = new TimelineLite();
@@ -171,8 +180,8 @@ window.onload = function() {
     //animação segunda página
     const tlSecond = new TimelineLite(); 
     tlSecond
-    .from('.textLeftSection', 0.6, {left: 40, autoAlpha: 0})
-    .from('.textLeftSection p', 0.8, {left: -90, autoAlpha: 0});
+    .from('.textLeftSection', 0.6, {left: 40, autoAlpha: 0}, '-=0.2')
+    .from('.textLeftSection p', 0.8, {left: -90, autoAlpha: 0}, '-=0.2');
 
     tlSecond.pause();
 
@@ -208,9 +217,9 @@ window.onload = function() {
     //animação quarta página
     const tlFourth = new TimelineLite(); 
     tlFourth
-    .from('.fourth-text h2', 1, {left: 40, autoAlpha: 0})
-    .from('.fourth-text h4', 1.2, {left: -90, autoAlpha: 0})
-    .from('.fourth-text a', 1.3, {left: -90, autoAlpha: 0})
+    .from('.fourth-text h2', 0.6, {left: 40, autoAlpha: 0}, '+=0.4') 
+    .from('.fourth-text h4', 0.6, {left: -90, autoAlpha: 0}, '-=0.3')
+    .from('.fourth-text a', 0.4, {left: -90, autoAlpha: 0}, '-=0.3')
     
     tlFourth.pause();
 
