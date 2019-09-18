@@ -191,5 +191,32 @@ window.onload = function() {
         tlPhones.play();
     }
 
+    //animação cartão
+    const tlCartao = new TimelineLite();
+    tlCartao
+    .from('.cartao-credito', 1, {left: 40, autoAlpha: 0, ease: Back.easeOut.config(1.7), onStart: playFourth})
+
+    //Cena cartão
+    const sceneCartao = new ScrollMagic.Scene({
+        triggerElement: '.fourth-step',
+        duration: 700,
+        triggerHook: 0.7
+    })
+    .setTween(tlCartao)  
+    .addTo(controller);
+
+    //animação quarta página
+    const tlFourth = new TimelineLite(); 
+    tlFourth
+    .from('.fourth-text h2', 1, {left: 40, autoAlpha: 0})
+    .from('.fourth-text h4', 1.2, {left: -90, autoAlpha: 0})
+    .from('.fourth-text a', 1.3, {left: -90, autoAlpha: 0})
+    
+    tlFourth.pause();
+
+    function playFourth() {
+        tlFourth.play();
+    }
+
 };
 
