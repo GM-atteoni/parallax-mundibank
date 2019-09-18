@@ -143,13 +143,13 @@ window.onload = function() {
     //Animação colunas
     let tlColumns = new TimelineLite();
     tlColumns.add('grow') 
-    .from('.column1', 0.2, {top: -120}, 'grow')
-    .from('.column2', 0.2, {top: -190}, 'grow')
-    .from('.column3', 0.2, {top: -250}, 'grow')
-    .from('.column4', 0.2, {top: -330}, 'grow')
-    .from('.column5', 0.2, {top: -250}, 'grow')
-    .from('.column6', 0.2, {top: -190}, 'grow')
-    .from('.column7', 0.2, {top: -120, onComplete: stopColumns}, 'grow')
+    .from('.column1', 0.3, {top: -120, autoAlpha: 0}, 'grow')
+    .from('.column2', 0.3, {top: -190, autoAlpha: 0}, 'grow')
+    .from('.column3', 0.3, {top: -250, autoAlpha: 0}, 'grow')
+    .from('.column4', 0.3, {top: -330, autoAlpha: 0}, 'grow')
+    .from('.column5', 0.3, {top: -250, autoAlpha: 0}, 'grow')
+    .from('.column6', 0.3, {top: -190, autoAlpha: 0}, 'grow')
+    .from('.column7', 0.3, {top: -120, autoAlpha: 0, onComplete: stopColumns}, 'grow')
 
     //Cena columns
     const sceneColumns = new ScrollMagic.Scene({
@@ -203,21 +203,25 @@ window.onload = function() {
     //animação cartão
     const tlCartao = new TimelineLite();
     tlCartao
-    .from('.cartao-credito', 1, {left: 40, autoAlpha: 0, ease: Back.easeOut.config(1.7), onStart: playFourth})
+    .from('.cartao-credito', 1, {left: 40, autoAlpha: 0, ease: Back.easeOut.config(1.7), onStart: playFourth, onComplete: pauseCartao})
 
     //Cena cartão
     const sceneCartao = new ScrollMagic.Scene({
         triggerElement: '.fourth-step',
-        duration: 700,
+        duration: 500,
         triggerHook: 0.7
     })
     .setTween(tlCartao)  
     .addTo(controller);
 
+    function pauseCartao() {
+        tlCartao.pause();
+    }
+
     //animação quarta página
     const tlFourth = new TimelineLite(); 
     tlFourth
-    .from('.fourth-text h2', 0.6, {left: 40, autoAlpha: 0}, '+=0.4') 
+    .from('.fourth-text h2', 0.6, {left: 40, autoAlpha: 0}, '+=0.5') 
     .from('.fourth-text h4', 0.6, {left: -90, autoAlpha: 0}, '-=0.3')
     .from('.fourth-text a', 0.4, {left: -90, autoAlpha: 0}, '-=0.3')
     
